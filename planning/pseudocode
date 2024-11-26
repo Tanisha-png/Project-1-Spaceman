@@ -1,0 +1,13 @@
+<!-- /*
+1. Start the game.
+2. Enter your name.
+3. Choose a category
+4. After the category has been chosen start picking letters.
+5. When the right letter is picked, there will be a sound.
+6. When the wrong letter is picked....
+    6.1 Nelson's Ha ha will be the sound
+    6.2 Spaceman will start to disappear when the wrong letter is picked.
+7. Each player will have a turn.
+8. Whoever can guess the correct word wins the game.
+    8.1 Winner: The song Happy will play.
+*/ -->
