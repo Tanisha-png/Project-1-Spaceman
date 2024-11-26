@@ -1,12 +1,26 @@
 <!-- /*
 1. Start the game.
+    1.2 Add Start Game Button
 2. Enter your name.
-3. Choose a category
+    2.1 Add input
+3. Categories
     3.1 80's Movies:
         - The Breakfast Club
         - Ferris Bueller's Day Off
-        - Beetlejuice
+        - Back to the Future
+        - Top Gun
+    3.2 80's Pop Hits:
+        - Thriller
+        - Material Girl
+        - Take On Me
+        - Karma Chameleon
+    3.3 Disney Characters:
+        - Mulan
+        - Tiana
+        - Genie
+        - Simba
 4. After the category has been chosen start picking letters.
+    4.1 Add A-Z buttons 
 5. When the right letter is picked, there will be a sound.
 6. When the wrong letter is picked....
     6.1 Nelson's Ha ha will be the sound
