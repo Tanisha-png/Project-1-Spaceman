@@ -1,38 +1,39 @@
 /*----- constants -----*/
 
-const winningCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba']
+const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba']
 
 /*----- state variables -----*/
 
 let winner;
 let turn;
 let player;
-let square;
+let wrong;
+let right;
 
 /*----- cached elements  -----*/
 const messageEl = document.querySelector('#message');
 const playAgainEl = document.querySelector('#play-again');
-const buttonEls = document.querySelectorAll('.btn-letter > div')
-
+const buttonEls = document.querySelectorAll('.btn-letter > div');
+const guessEl = document.querySelector('#guess-btn');
 
 /*----- event listeners -----*/
 playAgainEl.addEventListener('click', init);
-
+buttonEls.addEventListener('click', init);
+guessEl.addEventListener('click', init);
 
 /*----- functions -----*/
 init();
 
 function init() {
     square = ['', '', '', ''];
-    turn = '';
+    turn = 'Player1';
     winner = false;
-    tie = false;
     render();
 }
 
 function render() {
-    renderSquare();
-    renderMessages();
+    updateSquare();
+    updateMessage();
 };
 
 
