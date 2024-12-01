@@ -18,16 +18,19 @@ const guessEl = document.querySelector('#guess-btn');
 
 /*----- event listeners -----*/
 playAgainEl.addEventListener('click', init);
-buttonEls.addEventListener('click', init);
+buttonEls.forEach(button => {
+    button.addEventListener('click', handleClick)
+});
 guessEl.addEventListener('click', init);
-
 /*----- functions -----*/
 init();
 
 function init() {
-    square = ['', '', '', ''];
+    square = ['', '', '', '', ''];
     turn = 'Player1';
     winner = false;
+    wrong = 0;
+    right = 0;
     render();
 }
 
@@ -36,4 +39,33 @@ function render() {
     updateMessage();
 };
 
+function updateSquare() {
+    sqaure.forEach((guess, index) => {
+        const squareEl = document.querySelector(square[index]);
+        squareEl.textContent = guess;
+    });
+}
 
+function updateMessage() {
+    if (winner === false) {
+        messageEl.innerText = `${turn}'s wins`;
+    } else {
+        messageEl.innerText = `${turn}'s turn`;
+    }
+}
+
+function handleClick(event) {
+    console.log(event)
+    const letter = event.target.id
+    render();
+}
+
+function handleGuess() {
+    const rightGuess = 'Simba';
+    const playerGuess = square.join('');
+    if (playerGuess === rightGuess) {
+        return;
+    } else if (playerGuess === wrongGuess) {
+        return;
+    }
+}

@@ -10,23 +10,46 @@ body {
 }
 
 #container {
-    display: flex;
-    justify-content: space-around;
+    text-align: center;
+    margin-top: 20px;
 }
 
 h1 {
-    color:aliceblue; 
+    color: aliceblue;
     text-align: center;
     font-size: 70px;
 }
 
 .btn-letter {
     font-size: 25px;
+    background-color: aliceblue;
 }
 
 #message {
-    color:aliceblue;
+    color: aliceblue;
     text-align: center;
     font-size: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.btn-letter:hover {
+    background-color: blueviolet;
+}
+
+input {
+    border: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#play-again, #guess-btn {
+    border: 0;
+    padding: 10px;
+    font-size: 18px;
 }
 
