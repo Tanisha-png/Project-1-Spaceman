@@ -2,6 +2,7 @@
 
 const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba']
 
+
 /*----- state variables -----*/
 
 let winner;
@@ -11,18 +12,26 @@ let wrong;
 let right;
 
 /*----- cached elements  -----*/
+
 const messageEl = document.querySelector('#message');
 const playAgainEl = document.querySelector('#play-again');
 const buttonEls = document.querySelectorAll('.btn-letter > div');
 const guessEl = document.querySelector('#guess-btn');
+const guessInput = document.getElementById('#guess');
+const spacemanImg = document.getElementById('spaceman-img');
+
 
 /*----- event listeners -----*/
+
 playAgainEl.addEventListener('click', init);
 buttonEls.forEach(button => {
     button.addEventListener('click', handleClick)
 });
 guessEl.addEventListener('click', init);
+playAgainEl.addEventListener('click', startGame);
+
 /*----- functions -----*/
+
 init();
 
 function init() {
@@ -31,6 +40,7 @@ function init() {
     winner = false;
     wrong = 0;
     right = 0;
+    maxWrongGuesses = 6;
     render();
 }
 
