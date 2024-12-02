@@ -39,7 +39,7 @@ guessEl.addEventListener('click', handleGuess);
 init();
 
 function init() {
-    square = ['', '', '', ''];
+    square = [_, _, _, _];
     currentWord = disneyCharacters[Math.floor(Math.random() * disneyCharacters.length)].toUpperCase();
     turn = 'Player1';
     winner = false;
