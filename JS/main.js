@@ -102,4 +102,11 @@ function updateSpacemanImg() {
     spacemanImg.src = `images/${wrong}.png`;
 }
 
-
+function checkGameStatus() {
+    if (!square.includes('_')) {
+        winner === true;
+    }
+    if (wrong >= maxWrongGuesses) {
+        winner === false;
+    }
+} 
