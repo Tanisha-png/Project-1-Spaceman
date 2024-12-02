@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Spaceman",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Spaceman"
+	}
+}

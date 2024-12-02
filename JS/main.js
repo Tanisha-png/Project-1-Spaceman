@@ -5,18 +5,21 @@ const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba']
 
 /*----- state variables -----*/
 
+let square;
 let winner;
 let turn;
 let player;
 let wrong;
 let right;
+let maxWrongGuesses = 6;
+let currentWord;
 
 /*----- cached elements  -----*/
 
-const messageEl = document.querySelector('#message');
+const messageEl = document.querySelectorById('#message');
 const playAgainEl = document.querySelector('#play-again');
 const buttonEls = document.querySelectorAll('.btn-letter > div');
-const guessEl = document.querySelector('#guess-btn');
+const guessEl = document.querySelectorById('#guess-btn');
 const guessInput = document.getElementById('#guess');
 const spacemanImg = document.getElementById('spaceman-img');
 
@@ -27,15 +30,14 @@ playAgainEl.addEventListener('click', init);
 buttonEls.forEach(button => {
     button.addEventListener('click', handleClick)
 });
-guessEl.addEventListener('click', init);
-playAgainEl.addEventListener('click', startGame);
+guessEl.addEventListener('click', handleGuess);
 
 /*----- functions -----*/
 
 init();
 
 function init() {
-    square = ['', '', '', '', ''];
+    square = array(currentWord.lenght).fill('_');
     turn = 'Player1';
     winner = false;
     wrong = 0;
@@ -47,26 +49,29 @@ function init() {
 function render() {
     updateSquare();
     updateMessage();
+    updateSpacemanImg();
 };
 
 function updateSquare() {
     sqaure.forEach((guess, index) => {
-        const squareEl = document.querySelector(square[index]);
+        const squareEl = document.querySelector(`#square-${index}`);
         squareEl.textContent = guess;
     });
 }
 
 function updateMessage() {
     if (winner === false) {
-        messageEl.innerText = `${turn}'s wins`;
-    } else {
         messageEl.innerText = `${turn}'s turn`;
+    } else if (winner === true) {
+        messageEl.innerText = `${turn}'s wins`;
+    } else if (wrong >= maxWrongGuesses) {
+        messageEl.innerText = `${turn} Better Luck Next Time`;
     }
 }
 
 function handleClick(event) {
     console.log(event)
-    const letter = event.target.id
+    letter = event.target.textContent;
     render();
 }
 
@@ -78,4 +83,8 @@ function handleGuess() {
     } else if (playerGuess === wrongGuess) {
         return;
     }
+}
+
+function updateSpacemanImg() {
+    spacemanImg.src = `images/${wrong}.png`;
 }
