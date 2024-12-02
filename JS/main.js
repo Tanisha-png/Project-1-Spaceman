@@ -90,7 +90,6 @@ function handleClick(event) {
 }
 
 function handleGuess() {
-    const rightGuess = 'Simba';
     const playerGuess = square.join('');
     if (playerGuess === rightGuess) {
         return;
