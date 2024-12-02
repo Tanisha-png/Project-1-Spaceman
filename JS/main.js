@@ -72,8 +72,8 @@ function updateMessage() {
 function handleClick(event) {
     console.log(event)
     const letter = event.target.textContent.toUpperCase();
-    if (!winner && !square.includes(letter) && wrong < maxWrongGuesses) {
-        return letter;
+    if (square.includes(letter) || wrong >= maxWrongGuesses || winner) {
+        return;
     }
     render();
 }
@@ -91,3 +91,5 @@ function handleGuess() {
 function updateSpacemanImg() {
     spacemanImg.src = `images/${wrong}.png`;
 }
+
+
