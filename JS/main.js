@@ -106,6 +106,7 @@ function handleGuess() {
 
 function updateSpacemanImg() {
     spacemanImg.src = `images/${wrong}.png`;
+    imgPath = `imgs/spaceman-0${wrongGuess.length}`;
 }
 
 function checkGameStatus() {
