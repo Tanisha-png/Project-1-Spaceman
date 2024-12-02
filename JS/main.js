@@ -108,8 +108,9 @@ function updateSpacemanImg() {
 function checkGameStatus() {
     if (!square.includes('_')) {
         winner === true;
-    }
-    if (wrong >= maxWrongGuesses) {
+        messageEl.innerText = `${turn} wins.`;
+    } else if (wrong >= maxWrongGuesses) {
         winner === false;
+        messageEl.innerText = 'Game Over';
     }
 } 
