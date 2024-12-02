@@ -38,6 +38,7 @@ init();
 
 function init() {
     square = array(currentWord.lenght).fill('_');
+    currentWord = disneyCharacters[Math.floor(Math.random() * disneyCharacters.length)].toUpperCase();
     turn = 'Player1';
     winner = false;
     wrong = 0;
@@ -75,7 +76,16 @@ function handleClick(event) {
     if (square.includes(letter) || wrong >= maxWrongGuesses || winner) {
         return;
     }
-    render();
+    if (currentWord.includes(letter)) {
+        for (let i = 0; i < currentWord.length; i++) {
+            if (currentWord[i] === letter) {
+                square[1] = letter;
+            }
+        }
+        return right;
+    } else {
+        return wrong;
+    }
 }
 
 function handleGuess() {
