@@ -53,7 +53,7 @@ function render() {
 };
 
 function updateSquare() {
-    sqaure.forEach((guess, index) => {
+    square.forEach((guess, index) => {
         const squareEl = document.querySelector(`#square-${index}`);
         squareEl.textContent = guess;
     });
