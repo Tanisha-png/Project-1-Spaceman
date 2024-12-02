@@ -71,7 +71,10 @@ function updateMessage() {
 
 function handleClick(event) {
     console.log(event)
-    letter = event.target.textContent;
+    const letter = event.target.textContent.toUpperCase();
+    if (!winner && !square.includes(letter) && wrong < maxWrongGuesses) {
+        return letter;
+    }
     render();
 }
 
