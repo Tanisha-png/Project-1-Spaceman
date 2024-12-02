@@ -37,7 +37,7 @@ guessEl.addEventListener('click', handleGuess);
 init();
 
 function init() {
-    square = array(currentWord.lenght).fill('_');
+    square = array[currentWord.lenght].fill('_');
     currentWord = disneyCharacters[Math.floor(Math.random() * disneyCharacters.length)].toUpperCase();
     turn = 'Player1';
     winner = false;
@@ -90,7 +90,7 @@ function handleClick(event) {
 }
 
 function handleGuess() {
-    const playerGuess = square.join('');
+    const playerGuess = guessInput.ariaValueMax.toLocaleUpperCase();
     if (playerGuess === rightGuess) {
         return;
     } else if (playerGuess === wrongGuess) {
