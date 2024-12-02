@@ -23,6 +23,7 @@ h1 {
 .btn-letter {
     font-size: 25px;
     background-color: aliceblue;
+    border-radius: 30px;
 }
 
 #message {
@@ -45,12 +46,14 @@ input {
     border: 0;
     padding: 10px;
     font-size: 18px;
+    border-radius: 30px;
 }
 
 #play-again, #guess-btn {
     border: 0;
     padding: 10px;
     font-size: 18px;
+    border-radius: 30px;
 }
 
 #spaceman-image {
