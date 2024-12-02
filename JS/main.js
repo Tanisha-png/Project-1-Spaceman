@@ -1,6 +1,6 @@
 /*----- constants -----*/
 
-const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba']
+const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba'];
 
 
 /*----- state variables -----*/
@@ -26,20 +26,20 @@ const spacemanImg = document.getElementById('spaceman-img');
 
 /*----- event listeners -----*/
 
-playAgainEl.addEventListener('click', init);
+playAgainEl.addEventListener('click', handleClick);
 
 buttonEls.forEach(button => {
     button.addEventListener('click', handleClick)
 });
 
-guessEl.addEventListener('click', handleGuess);
+guessEl.addEventListener('click', init);
 
 /*----- functions -----*/
 
 init();
 
 function init() {
-    square = [_, _, _, _];
+    square = ['_', '_', '_', '_'];
     currentWord = disneyCharacters[Math.floor(Math.random() * disneyCharacters.length)].toUpperCase();
     turn = 'Player1';
     winner = false;
