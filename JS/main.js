@@ -1,7 +1,7 @@
 /*----- constants -----*/
 
 const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba']
-const imagePath = `imgs/spaceman-0${maxWrongGuesses.length}`
+
 
 /*----- state variables -----*/
 
@@ -16,10 +16,10 @@ let currentWord;
 
 /*----- cached elements  -----*/
 
-const messageEl = document.querySelectorById('#message');
+const messageEl = document.querySelector('#message');
 const playAgainEl = document.querySelector('#play-again');
-const buttonEls = document.querySelectorAll('.btn-letter > div');
-const guessEl = document.querySelectorById('#guess-btn');
+const buttonEls = [...document.querySelectorAll('.btn-letter > div')];
+const guessEl = document.querySelector('#guess-btn');
 const guessInput = document.getElementById('#guess');
 const spacemanImg = document.getElementById('spaceman-img');
 
