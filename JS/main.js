@@ -27,9 +27,11 @@ const spacemanImg = document.getElementById('spaceman-img');
 /*----- event listeners -----*/
 
 playAgainEl.addEventListener('click', init);
+
 buttonEls.forEach(button => {
     button.addEventListener('click', handleClick)
 });
+
 guessEl.addEventListener('click', handleGuess);
 
 /*----- functions -----*/
@@ -93,8 +95,9 @@ function handleClick(event) {
 }
 
 function handleGuess() {
-    const playerGuess = guessInput.ariaValueMax.toLocaleUpperCase();
-    if (playerGuess === rightGuess) {
+    const playerGuess = guessInput.value.toLocaleUpperCase();
+    guessInput.value = '';
+    if (!playerGuess || playerGuess.length !== 1 || square.includes(playerGuess) || wrong >= maxWrongGuesses || winner ) {
         return;
     } else if (playerGuess === wrongGuess) {
         return;
