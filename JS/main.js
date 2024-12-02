@@ -1,7 +1,7 @@
 /*----- constants -----*/
 
 const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba']
-
+const imagePath = `imgs/spaceman-0${maxWrongGuesses.length}`
 
 /*----- state variables -----*/
 
@@ -51,6 +51,7 @@ function render() {
     updateSquare();
     updateMessage();
     updateSpacemanImg();
+    checkGameStatus();
 };
 
 function updateSquare() {
