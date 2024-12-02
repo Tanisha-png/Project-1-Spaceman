@@ -44,7 +44,10 @@ function init() {
     wrong = 0;
     right = 0;
     maxWrongGuesses = 6;
-    render();
+    
+    for (let i = 0; i < currentWord.length; i++) {
+        square.push('_');
+    }
 }
 
 function render() {
