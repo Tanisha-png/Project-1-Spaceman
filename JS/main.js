@@ -31,7 +31,7 @@ const soundEl = document.getElementById('game-sound');
 playAgainEl.addEventListener('click', init);
 
 buttonEls.forEach(button => {
-    button.addEventListener('click', handleClick)
+    button.addEventListener('click', handleClick);
 });
 
 guessEl.addEventListener('click', handleGuess);
@@ -135,3 +135,4 @@ function checkGameStatus() {
         soundEl.play();
     }
 } 
+
