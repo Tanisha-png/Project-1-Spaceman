@@ -54,6 +54,7 @@ input {
     padding: 10px;
     font-size: 18px;
     border-radius: 30px;
+    font-family: orbitron;
 }
 
 #spaceman-image {
@@ -70,3 +71,4 @@ input {
         gap: 5px;
     }
 }
+
