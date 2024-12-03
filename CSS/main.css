@@ -73,3 +73,6 @@ input {
     }
 }
 
+.wrong-letter {
+    color: lightskyblue;
+}

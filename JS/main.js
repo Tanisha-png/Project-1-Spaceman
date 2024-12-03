@@ -47,6 +47,10 @@ function init() {
     wrong = 0;
     right = 0;
     maxWrongGuesses = 6;
+
+    buttonEls.forEach(button => {
+        button.classList.remove('wrong-letter');
+    });
     
     for (let i = 0; i < currentWord.length; i++) {
         square.push('_');
@@ -97,6 +101,7 @@ function handleClick(event) {
     } else {
         wrong++;
         messageEl.innerText = 'Wrong!!';
+        event.target.classList.add('wrong-letter');
     }
     render();
 }   
@@ -121,6 +126,11 @@ function handleGuess() {
         right++;
     } else {
         wrong++;
+        
+        const wrongButton = buttonEls.find(button => button.textContent.toUpperCase() === playerGuess);
+            if (wrongButton) {
+                wrongButton.classList.add('wrong-letter');
+            }
     }
     if (playerGuess.length === currentWord.length) {
         if (playerGuess === currentWord) {
