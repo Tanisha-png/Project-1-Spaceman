@@ -20,10 +20,10 @@ const messageEl = document.querySelector('#message');
 const playAgainEl = document.querySelector('#play-again');
 const buttonEls = [...document.querySelectorAll('.btn-letter')];
 const guessEl = document.querySelector('#guess-btn');
-const guessInput = document.getElementById('#guess');
+const guessInput = document.getElementById('guess');
 const spacemanImg = document.getElementById('spaceman-img');
 const squaresContainer = document.querySelector('.container');
-const soundSrc = document.querySelector('.sound-src');
+const soundSrc = document.querySelector('sound-src');
 
 /*----- event listeners -----*/
 
@@ -33,7 +33,7 @@ buttonEls.forEach(button => {
     button.addEventListener('click', handleClick)
 });
 
-guessEl.addEventListener('click', init);
+guessEl.addEventListener('click', handleGuess);
 
 /*----- functions -----*/
 
@@ -126,6 +126,7 @@ function checkGameStatus() {
         winner = true;
         messageEl.innerText = 'You win!';
         soundSrc.src = '218740__audioorange123__star-trek-computer-sound.wav';
+        soundEl.play();
     } else if (wrong >= maxWrongGuesses) {
         winner = false;
         messageEl.innerText = 'Game Over';
