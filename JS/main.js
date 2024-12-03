@@ -24,6 +24,7 @@ const guessInput = document.getElementById('guess');
 const spacemanImg = document.getElementById('spaceman-img');
 const squaresContainer = document.querySelector('.container');
 const soundSrc = document.querySelector('sound-src');
+const soundEl = document.getElementById('game-sound');
 
 /*----- event listeners -----*/
 
@@ -125,7 +126,7 @@ function checkGameStatus() {
     if (!square.includes('_')) {
         winner = true;
         messageEl.innerText = 'You win!';
-        soundSrc.src = '218740__audioorange123__star-trek-computer-sound.wav';
+        soundEl.src = '769801__thelastoneonearth__groovy-winner-end-version.wav';
         soundEl.play();
     } else if (wrong >= maxWrongGuesses) {
         winner = false;
