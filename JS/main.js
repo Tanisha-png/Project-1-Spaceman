@@ -131,5 +131,7 @@ function checkGameStatus() {
     } else if (wrong >= maxWrongGuesses) {
         winner = false;
         messageEl.innerText = 'Game Over';
+        soundEl.src = '74206__timbre__star-trek-emergency-simulation.wav';
+        soundEl.play();
     }
 } 
