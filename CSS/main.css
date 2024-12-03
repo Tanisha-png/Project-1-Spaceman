@@ -60,3 +60,13 @@ input {
     width: 100px;
     margin-top: 20px;
 }
+
+.last-section {
+    display: flex;
+    color:aliceblue;
+    align-items: center;
+    .container{
+        display: flex;
+        gap: 5px;
+    }
+}

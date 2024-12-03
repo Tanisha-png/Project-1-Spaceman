@@ -1,6 +1,6 @@
 /*----- constants -----*/
 
-const disneyCharacters = ['Mulan', 'Tiana', 'Genie', 'Simba'];
+const disneyCharacters = ['MULAN', 'TIANA', 'GENIE', 'SIMBA'];
 
 
 /*----- state variables -----*/
@@ -18,15 +18,16 @@ let currentWord;
 
 const messageEl = document.querySelector('#message');
 const playAgainEl = document.querySelector('#play-again');
-const buttonEls = [...document.querySelectorAll('.btn-letter > div')];
+const buttonEls = [...document.querySelectorAll('.btn-letter')];
 const guessEl = document.querySelector('#guess-btn');
 const guessInput = document.getElementById('#guess');
 const spacemanImg = document.getElementById('spaceman-img');
-
+const squaresContainer = document.querySelector('.container');
+const soundSrc = document.querySelector('.sound-src');
 
 /*----- event listeners -----*/
 
-playAgainEl.addEventListener('click', handleClick);
+playAgainEl.addEventListener('click', init);
 
 buttonEls.forEach(button => {
     button.addEventListener('click', handleClick)
@@ -39,9 +40,8 @@ guessEl.addEventListener('click', init);
 init();
 
 function init() {
-    square = ['_', '_', '_', '_'];
+    square = [];
     currentWord = disneyCharacters[Math.floor(Math.random() * disneyCharacters.length)].toUpperCase();
-    turn = 'Player1';
     winner = false;
     wrong = 0;
     right = 0;
@@ -50,31 +50,34 @@ function init() {
     for (let i = 0; i < currentWord.length; i++) {
         square.push('_');
     }
+    render();
 }
 
 function render() {
     updateSquare();
-    updateMessage();
+    // updateMessage();
     updateSpacemanImg();
     checkGameStatus();
 };
 
 function updateSquare() {
     square.forEach((guess, index) => {
+        console.log(index);
         const squareEl = document.querySelector(`#square-${index}`);
+        console.log(squareEl);
         squareEl.textContent = guess;
     });
 }
 
-function updateMessage() {
-    if (winner === false) {
-        messageEl.innerText = `${turn}'s turn`;
-    } else if (winner === true) {
-        messageEl.innerText = `${turn}'s wins`;
-    } else if (wrong >= maxWrongGuesses) {
-        messageEl.innerText = `${turn} Better Luck Next Time`;
-    }
-}
+// function updateMessage() {
+//     if (winner === false) {
+//         messageEl.innerText = 'You Lose!';
+//     } else if (winner === true) {
+//         messageEl.innerText = 'You win!';
+//     } else if (wrong >= maxWrongGuesses) {
+//         messageEl.innerText = 'You Lose';
+//     }
+// }
 
 function handleClick(event) {
     console.log(event)
@@ -88,33 +91,43 @@ function handleClick(event) {
                 square[i] = letter;
             }
         }
-        return right;
+        right++;
     } else {
-        return wrong;
+        wrong++;
     }
-}
+    render();
+}   
 
 function handleGuess() {
     const playerGuess = guessInput.value.toLocaleUpperCase();
     guessInput.value = '';
     if (!playerGuess || playerGuess.length !== 1 || square.includes(playerGuess) || wrong >= maxWrongGuesses || winner ) {
         return;
-    } else if (playerGuess === wrongGuess) {
-        return;
+    } 
+    if (currentWord.includes(playerGuess)) {
+        for (let i = 0; i < currentWord.length; i++) {
+            if (currentWord[i] === playerGuess) {
+                square[i] = playerGuess;
+            }
+        }
+        right++;
+    } else {
+        wrong++;
     }
+    render();
 }
 
 function updateSpacemanImg() {
-    spacemanImg.src = `images/${wrong}.png`;
-    imgPath = `imgs/spaceman-0${wrongGuess.length}`;
+    spacemanImg.src = `imgs/spaceman-${wrong}.png`;
 }
 
 function checkGameStatus() {
     if (!square.includes('_')) {
-        winner === true;
-        messageEl.innerText = `${turn} wins.`;
+        winner = true;
+        messageEl.innerText = 'You win!';
+        soundSrc.src = '218740__audioorange123__star-trek-computer-sound.wav';
     } else if (wrong >= maxWrongGuesses) {
-        winner === false;
+        winner = false;
         messageEl.innerText = 'Game Over';
     }
 } 
