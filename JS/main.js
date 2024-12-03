@@ -100,11 +100,16 @@ function handleClick(event) {
 }   
 
 function handleGuess() {
-    const playerGuess = guessInput.value.toLocaleUpperCase();
+    const playerGuess = guessInput.value.toUpperCase();
     guessInput.value = '';
-    if (!playerGuess || playerGuess.length !== 1 || square.includes(playerGuess) || wrong >= maxWrongGuesses || winner ) {
+    if (!playerGuess || (playerGuess.length !== 1 && playerGuess.length !== currentWord.length) || wrong >= maxWrongGuesses || winner ) {
         return;
     } 
+    if (playerGuess.length === 1) {
+        if (square.includes(playerGuess)) {
+            return;
+        }
+    }
     if (currentWord.includes(playerGuess)) {
         for (let i = 0; i < currentWord.length; i++) {
             if (currentWord[i] === playerGuess) {
@@ -114,6 +119,15 @@ function handleGuess() {
         right++;
     } else {
         wrong++;
+    }
+    if (playerGuess.length === currentWord.length) {
+        if (playerGuess === currentWord) {
+            square = currentWord.split('');
+            right = currentWord.length;
+            winner = true;
+        } else {
+            wrong++;
+        }
     }
     render();
 }
