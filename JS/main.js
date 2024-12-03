@@ -85,7 +85,7 @@ function handleClick(event) {
     if (currentWord.includes(letter)) {
         for (let i = 0; i < currentWord.length; i++) {
             if (currentWord[i] === letter) {
-                square[1] = letter;
+                square[i] = letter;
             }
         }
         return right;
