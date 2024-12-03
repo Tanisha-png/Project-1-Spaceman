@@ -93,8 +93,10 @@ function handleClick(event) {
             }
         }
         right++;
+        messageEl.innerText = 'You Rock!!';
     } else {
         wrong++;
+        messageEl.innerText = 'Wrong!!';
     }
     render();
 }   
