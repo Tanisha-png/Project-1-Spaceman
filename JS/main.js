@@ -1,6 +1,11 @@
 /*----- constants -----*/
 
-const disneyCharacters = ['MULAN', 'TIANA', 'GENIE', 'SIMBA'];
+const disneyCharacters = [
+    {name: 'MULAN', hint: 'Enters the army as a man named Ping'},
+    {name: 'TIANA', hint: 'Turns into a frog in New Orleans'},
+    {name: 'GENIE', hint: 'Grants Aladdin three wishes'},
+    {name: 'SIMBA', hint: 'Friends with Timon and Pumbaa'}
+];
 
 
 /*----- state variables -----*/
@@ -51,7 +56,7 @@ function init() {
     buttonEls.forEach(button => {
         button.classList.remove('wrong-letter');
     });
-    
+
     for (let i = 0; i < currentWord.length; i++) {
         square.push('_');
     }
@@ -76,16 +81,6 @@ function updateSquare() {
     });
 }
 
-// function updateMessage() {
-//     if (winner === false) {
-//         messageEl.innerText = 'You Lose!';
-//     } else if (winner === true) {
-//         messageEl.innerText = 'You win!';
-//     } else if (wrong >= maxWrongGuesses) {
-//         messageEl.innerText = 'You Lose';
-//     }
-// }
-
 function handleClick(event) {
     console.log(event)
     const letter = event.target.textContent.toUpperCase();
@@ -106,14 +101,14 @@ function handleClick(event) {
         event.target.classList.add('wrong-letter');
     }
     render();
-}   
+}
 
 function handleGuess() {
     const playerGuess = guessInput.value.toUpperCase();
     guessInput.value = '';
-    if (!playerGuess || (playerGuess.length !== 1 && playerGuess.length !== currentWord.length) || wrong >= maxWrongGuesses || winner ) {
+    if (!playerGuess || (playerGuess.length !== 1 && playerGuess.length !== currentWord.length) || wrong >= maxWrongGuesses || winner) {
         return;
-    } 
+    }
     if (playerGuess.length === 1) {
         if (square.includes(playerGuess)) {
             return;
@@ -128,11 +123,11 @@ function handleGuess() {
         right++;
     } else {
         wrong++;
-        
+
         const wrongButton = buttonEls.find(button => button.textContent.toUpperCase() === playerGuess);
-            if (wrongButton) {
-                wrongButton.classList.add('wrong-letter');
-            }
+        if (wrongButton) {
+            wrongButton.classList.add('wrong-letter');
+        }
     }
     if (playerGuess.length === currentWord.length) {
         if (playerGuess === currentWord) {
@@ -162,5 +157,5 @@ function checkGameStatus() {
         soundEl.src = '74206__timbre__star-trek-emergency-simulation.wav';
         soundEl.play();
     }
-} 
+}
 
