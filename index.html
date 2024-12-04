@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <script defer src="JS/main.js"></script>
 </head>
+
 <body>
     <audio controls autoplay muted loop>
         <source class="sound-src" src="218740__audioorange123__star-trek-computer-sound.wav">
     </audio>
     <audio id="game-sound" preload="auto">
-        <source id="sound-src" src="769801__thelastoneonearth__groovy-winner-end-version.wav">
-        <source id="sound-src" src="74206__timbre__star-trek-emergency-simulation.wav">
+        <source id="sound-src">
+        <!-- <source id="sound-src" src="74206__timbre__star-trek-emergency-simulation.wav"> -->
     </audio>
     <h1>Spaceman</h1>
-    <h2 id="message"></h2> 
-
-    <section id="container">
-        <div class="row">
-            <button  class="btn-letter">A</button>
-            <button  class="btn-letter">B</button>
-            <button  class="btn-letter">C</button>
-            <button  class="btn-letter">D</button>
-            <button  class="btn-letter">E</button>
-            <button  class="btn-letter">F</button>
-        </div>
-        <div class="row">
-            <button  class="btn-letter">G</button>
-            <button  class="btn-letter">H</button>
-            <button  class="btn-letter">I</button>
-            <button  class="btn-letter">J</button>
-            <button  class="btn-letter">K</button>
-            <button  class="btn-letter">L</button>
-        </div>
-        <div class="row">
-            <button class="btn-letter">M</button>
-            <button class="btn-letter">N</button>
-            <button class="btn-letter">O</button>
-            <button class="btn-letter">P</button>
-            <button class="btn-letter">Q</button>
-            <button class="btn-letter">R</button>
-            <button class="btn-letter">S</button>
-        </div>
-        <div class="row">
-            <button class="btn-letter">T</button>
-            <button class="btn-letter">U</button>
-            <button class="btn-letter">V</button>
-            <button class="btn-letter">W</button>
-            <button class="btn-letter">X</button>
-            <button class="btn-letter">Y</button>
-            <button class="btn-letter">Z</button>
-        </div>
-        <input type="text" id="guess">
-        <button id="guess-btn">Guess</button>
-        <button id="play-again">Play Again</button>
-    </section>
-    <section class="last-section">
-        <img src="imgs/spaceman-0.png" alt="spaceman" id="spaceman-img">
-        <div class="container">
-            <div id="square-0"></div>
-            <div id="square-1"></div>
-            <div id="square-2"></div>
-            <div id="square-3"></div>
-            <div id="square-4"></div>
-        </div>
-    </section>
+    <h2 id="message"></h2>
+    <main>
+        <section class="last-section">
+            
+            <div class="container">
+                <div id="square-0"></div>
+                <div id="square-1"></div>
+                <div id="square-2"></div>
+                <div id="square-3"></div>
+                <div id="square-4"></div>
+            </div>
+            <img src="imgs/spaceman-0.png" alt="spaceman" id="spaceman-img">
+        </section>
+        <section id="container">
+            <div class="row">
+                <button class="btn-letter">A</button>
+                <button class="btn-letter">B</button>
+                <button class="btn-letter">C</button>
+                <button class="btn-letter">D</button>
+                <button class="btn-letter">E</button>
+                <button class="btn-letter">F</button>
+            </div>
+            <div class="row">
+                <button class="btn-letter">G</button>
+                <button class="btn-letter">H</button>
+                <button class="btn-letter">I</button>
+                <button class="btn-letter">J</button>
+                <button class="btn-letter">K</button>
+                <button class="btn-letter">L</button>
+            </div>
+            <div class="row">
+                <button class="btn-letter">M</button>
+                <button class="btn-letter">N</button>
+                <button class="btn-letter">O</button>
+                <button class="btn-letter">P</button>
+                <button class="btn-letter">Q</button>
+                <button class="btn-letter">R</button>
+                <button class="btn-letter">S</button>
+            </div>
+            <div class="row">
+                <button class="btn-letter">T</button>
+                <button class="btn-letter">U</button>
+                <button class="btn-letter">V</button>
+                <button class="btn-letter">W</button>
+                <button class="btn-letter">X</button>
+                <button class="btn-letter">Y</button>
+                <button class="btn-letter">Z</button>
+            </div>
+            <input type="text" id="guess">
+            <button id="guess-btn">Guess</button>
+            <button id="play-again">Play Again</button>
+        </section>
+        
+    </main>
 </body>
+
 </html>

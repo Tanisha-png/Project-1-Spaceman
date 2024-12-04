@@ -55,6 +55,8 @@ function init() {
     for (let i = 0; i < currentWord.length; i++) {
         square.push('_');
     }
+    messageEl.innerText = '';
+    soundEl.src = '';
     render();
 }
 
