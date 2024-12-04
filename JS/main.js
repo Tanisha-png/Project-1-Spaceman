@@ -1,11 +1,13 @@
 /*----- constants -----*/
 
-const disneyCharacters = [
-    {name: 'MULAN', hint: 'Enters the army as a man named Ping'},
-    {name: 'TIANA', hint: 'Turns into a frog in New Orleans'},
-    {name: 'GENIE', hint: 'Grants Aladdin three wishes'},
-    {name: 'SIMBA', hint: 'Friends with Timon and Pumbaa'}
-];
+const disneyCharacters = ['MULAN', 'TIANA', 'GENIE', 'SIMBA'];
+
+// const disneyCharacters = [
+//     {name: 'MULAN', hint: 'Enters the army as a man named Ping'},
+//     {name: 'TIANA', hint: 'Turns into a frog in New Orleans'},
+//     {name: 'GENIE', hint: 'Grants Aladdin three wishes'},
+//     {name: 'SIMBA', hint: 'Friends with Timon and Pumbaa'}
+// ];
 
 
 /*----- state variables -----*/
@@ -18,6 +20,7 @@ let wrong;
 let right;
 let maxWrongGuesses = 6;
 let currentWord;
+// let currentHint;
 
 /*----- cached elements  -----*/
 
@@ -30,7 +33,7 @@ const spacemanImg = document.getElementById('spaceman-img');
 const squaresContainer = document.querySelector('.container');
 const soundSrc = document.querySelector('sound-src');
 const soundEl = document.getElementById('game-sound');
-const hintEl = document.querySelector('#hint');
+// const hintEl = document.querySelector('#hint');
 
 /*----- event listeners -----*/
 
@@ -49,6 +52,10 @@ init();
 function init() {
     square = [];
     currentWord = disneyCharacters[Math.floor(Math.random() * disneyCharacters.length)].toUpperCase();
+    // square = Array(currentWord.length).fill('')
+    // const selectedCharacter = disneyCharacters[Math.floor(Math.random() * disneyCharacters.length)];
+    // currentWord = selectedCharacter.name.toUpperCase();
+    // currentHint = selectedCharacter.hint;
     winner = false;
     wrong = 0;
     right = 0;
@@ -64,6 +71,7 @@ function init() {
     messageEl.innerText = '';
     soundEl.src = '';
     render();
+    // displayHint();
 }
 
 function render() {
@@ -160,3 +168,6 @@ function checkGameStatus() {
     }
 }
 
+// function displayHint() {
+//     hintEl.innerText = `Hint: ${currentHint}`;
+// }
