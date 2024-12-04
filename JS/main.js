@@ -30,6 +30,7 @@ const spacemanImg = document.getElementById('spaceman-img');
 const squaresContainer = document.querySelector('.container');
 const soundSrc = document.querySelector('sound-src');
 const soundEl = document.getElementById('game-sound');
+const hintEl = document.querySelector('#hint');
 
 /*----- event listeners -----*/
 
