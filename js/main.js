@@ -74,14 +74,12 @@ function init() {
 
 function render() {
     updateSquare();
-    // updateMessage();
     updateSpacemanImg();
     checkGameStatus();
 };
 
 function updateSquare() {
     square.forEach((guess, index) => {
-        console.log(index);
         const squareEl = document.querySelector(`#square-${index}`);
         console.log(squareEl);
         squareEl.textContent = guess;
@@ -89,7 +87,6 @@ function updateSquare() {
 }
 
 function handleClick(event) {
-    console.log(event)
     const letter = event.target.textContent.toUpperCase();
     if (square.includes(letter) || wrong >= maxWrongGuesses || winner) {
         return;
