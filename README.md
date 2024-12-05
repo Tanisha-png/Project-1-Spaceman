@@ -19,10 +19,9 @@ In this game, players can guess letters to reveal a hidden word. The game includ
 <img src="https://i.imgur.com/VcVcC0r.jpeg">
 
 # Technologies Used
-
-- JavaScript
 - HTML
 - CSS
+- JavaScript
 
 
 # Getting Started
