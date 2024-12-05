@@ -1,7 +1,7 @@
 ![Galaxy](https://images.unsplash.com/photo-1598735810846-95cdc1e20150?q=80&w=2010&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 # Spaceman
-In this game, players can guess letters to reveal a hidden word. The game includes sound effects and interactive UI (User Interface).
+In this game, players can guess letters to reveal a hidden word. The game includes sound effects and interactive UI (User Interface). This game is similar to the game Hangman, but with a spaceman theme. When there are wrong guesses, the spaceman slowly disappears. 
 
 # Features
 
