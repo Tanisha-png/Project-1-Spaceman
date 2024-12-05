@@ -81,7 +81,6 @@ function render() {
 function updateSquare() {
     square.forEach((guess, index) => {
         const squareEl = document.querySelector(`#square-${index}`);
-        console.log(squareEl);
         squareEl.textContent = guess;
     });
 }
