@@ -16,7 +16,7 @@ In this game, players can guess letters to reveal a hidden word. The game includ
 # Screenshot
 
 <img src="https://i.imgur.com/ZyH1Js0.jpg">
-<img src="https://i.imgur.com/Le4CxqF.png">
+<img src="https://i.imgur.com/VcVcC0r.jpeg">
 
 # Technologies Used
 
