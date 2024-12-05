@@ -152,12 +152,12 @@ function checkGameStatus() {
     if (!square.includes('_')) {
         winner = true;
         messageEl.innerText = 'You win!';
-        soundEl.src = '769801__thelastoneonearth__groovy-winner-end-version.wav';
+        soundEl.src = 'sounds/769801__thelastoneonearth__groovy-winner-end-version.wav';
         soundEl.play();
     } else if (wrong >= maxWrongGuesses) {
         winner = false;
         messageEl.innerText = 'Game Over';
-        soundEl.src = '74206__timbre__star-trek-emergency-simulation.wav';
+        soundEl.src = 'sounds/74206__timbre__star-trek-emergency-simulation.wav';
         soundEl.play();
     }
 }
