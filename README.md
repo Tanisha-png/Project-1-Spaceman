@@ -1,3 +1,5 @@
+![Galaxy](https://images.unsplash.com/photo-1598735810846-95cdc1e20150?q=80&w=2010&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+
 # Spaceman
 In this game, players can guess letters to reveal a hidden word. The game includes sound effects and interactive UI (User Interface).
 
@@ -13,8 +15,8 @@ In this game, players can guess letters to reveal a hidden word. The game includ
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="https://i.imgur.com/ZyH1Js0.jpg">
+<img src="https://i.imgur.com/Le4CxqF.png">
 
 # Technologies Used
 
@@ -29,5 +31,8 @@ In this game, players can guess letters to reveal a hidden word. The game includ
 
 # Next Steps
 
-- Future enhancement one...
-- Future enhancement two... 
+- **Future enhancement one:** 
+    - Add more words/catagories for the game.
+
+-  **Future enhancement two:**
+    - If your guess is wrong, you automatically lose the game.
